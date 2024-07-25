@@ -1,0 +1,15 @@
+'Работа с сырыми данными'
+df= pd.read_csv(csv, header=None)
+df.columns=['Time','price'] даем названия колонкам
+df['Time']=pd.to_datetime(df['Time']) меняем формат
+df.set_index('Time' ,inplace=True)
+
+'В одну строчку'
+df= pd.read_csv(csv,
+            header=None, - не присваивать значение заголовкам по первой строке
+            names=['Timestamp','Price'],
+            index_col=0,
+            parse_dates=True,
+             )
+
+'Очистка от пустых данных'
