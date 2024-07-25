@@ -20,7 +20,7 @@ response = requests.get(url, params=params)
 
 soup = BeautifulSoup(response.content, 'lxml')
 i = 0
-# Поиск тега с атрибутом data-cmp="firstPrice"
+# Searching tag with attr data-cmp="firstPrice"
 name = soup.find_all('h2', attrs={"data-cmp": "subheading"})
 price = soup.find_all(attrs={"data-cmp": "firstPrice"})
 for name_tag, price_tag in zip(name, price):
