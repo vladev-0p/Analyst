@@ -1,6 +1,6 @@
+''' At this project we made function which  filters crypto data by specifically given parameters '''
 import requests
 import pandas as pd
-
 
 # def get_historic_price(symbol, exchange='bitfinex', after='2018-09-01'):
 #     url = f'https://api.cryptowat.ch/markets/{exchange}/{symbol}usd/ohlc'.format(
@@ -21,6 +21,8 @@ import pandas as pd
 #     df.set_index('CloseTime', inplace=True)
 #     return df
 
+'''Getting filtered info about Crypto'''
+
 
 def get_data(s_name, **filters):
     df = pd.read_excel('cryptos.xlsx', sheet_name=s_name)
@@ -39,13 +41,10 @@ def get_data(s_name, **filters):
     return df
 
 
-filters= {'Volume':{'range':[0,100]},
-          'ClosePrice':{'+':4000}
-          }
+filters = {'Volume': {'range': [0, 100]},
+           'ClosePrice': {'+': 4000}
+           }
 
-x = get_data('Bitcoin',**filters)
+x = get_data('Bitcoin', **filters)
 
 print(x)
-
-
-

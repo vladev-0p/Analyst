@@ -14,9 +14,7 @@ data = table[4]
 
 population = data.filter(like='Member').join(data.filter(like='Population')).join(
     data.filter(like='PPP GDP (Int$ million)'))  #taking 2 cols double filter
-'''Droping row with word Total in row'''
-
-mask = population.apply(lambda i: i.astype(str).str.contains('Total').any(), axis=1)
+mask = population.apply(lambda i: i.astype(str).str.contains('Total').any(), axis=1) #Droping row with word Total in row
 population.drop(index=population[mask].index, inplace=True)
 # print(population)
 '''Adding values'''
