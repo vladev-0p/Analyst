@@ -47,10 +47,10 @@ WHERE time_OUT BETWEEN STR_TO_DATE('1900-01-01 10:00:00','%Y-%m-%d %H:%i:%s') <b
 
 ## 5 Task
 
-##### 2 Tables:
+#### 2 Tables:
 1.	projects — с информацией о проектах: project_id, project_name, client_id.
 2.	clients — с информацией о клиентах: client_id, client_name, country.
-<br>
+
 #### Display all projects that belong to clients from the country CANADA <br>
 #### Вывести все проекты  , которые принадлежать клиентам из страны CANADA <br>
 
